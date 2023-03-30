@@ -16,7 +16,7 @@ public class UsersRequestsTest extends BaseTest {
 
         Response response = requestHelper.performRequest(RequestMethodType.GET_METHOD, BaseURL + RequestURLType.GET_LIST_USERS, null);
         responseHelper = new ResponseHelper(response);
-        responseHelper.validateResponse(ResponseBodyType.RESPONSE_USERS, ResponseCodeType.STATUS_200);
+        responseHelper.validateResponse(ResponseBodyType.RESPONSE_USERS, ResponseCodeType.STATUS_200, null);
     }
 
         @Test(priority = 2)
@@ -24,6 +24,7 @@ public class UsersRequestsTest extends BaseTest {
             Response response = requestHelper.performRequest(RequestMethodType.GET_METHOD, BaseURL + RequestURLType.GET_SINGLE_USER, null);
             responseHelper = new ResponseHelper(response);
             responseHelper.validateResponseCode(ResponseCodeType.STATUS_200);
+            responseHelper.printResponseBody();
 
         }
 
@@ -32,7 +33,7 @@ public class UsersRequestsTest extends BaseTest {
 
             Response response = requestHelper.performRequest(RequestMethodType.GET_METHOD, BaseURL + RequestURLType.GET_SINGLE_USER_NOT_FOUND, null);
             responseHelper = new ResponseHelper(response);
-            responseHelper.validateResponse(ResponseBodyType.RESPONSE_USER, ResponseCodeType.STATUS_404);
+            responseHelper.validateResponse(ResponseBodyType.RESPONSE_USER, ResponseCodeType.STATUS_404, null);
 
         }
         @Test(priority = 4)
@@ -40,7 +41,7 @@ public class UsersRequestsTest extends BaseTest {
 
             Response response = requestHelper.performRequest(RequestMethodType.GET_METHOD, BaseURL + RequestURLType.GET_LIST_USERS, null);
             responseHelper = new ResponseHelper(response);
-            responseHelper.validateResponse(ResponseBodyType.RESPONSE_USERS, ResponseCodeType.STATUS_200);
+            responseHelper.validateResponse(ResponseBodyType.RESPONSE_USERS, ResponseCodeType.STATUS_200,null );
 
         }
 

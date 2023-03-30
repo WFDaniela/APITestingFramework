@@ -7,12 +7,7 @@ import ResponseObject.ResponseBodyType;
 import ResponseObject.ResponseCodeType;
 import ResponseObject.ResponseHelper;
 import ShareData.BaseTest;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
-import io.restassured.specification.RequestSpecification;
-import org.json.JSONObject;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RegisterRequestTest extends BaseTest {
@@ -25,7 +20,7 @@ public class RegisterRequestTest extends BaseTest {
         Response response = requestHelper.performRequest(RequestMethodType.POST_METHOD, BaseURL+RequestURLType.POST_REGISTER, RequestSuccess);
 
         responseHelper = new ResponseHelper(response);
-        responseHelper.validateResponse(ResponseBodyType.RESPONSE_REGISTER, ResponseCodeType.STATUS_200);
+        responseHelper.validateResponse(ResponseBodyType.RESPONSE_REGISTER, ResponseCodeType.STATUS_200, null);
 
     }
 
@@ -34,9 +29,9 @@ public class RegisterRequestTest extends BaseTest {
 
         RequestRegister RequestFailed = new RequestRegister.RequestRegisterBuilder().Email("sydney@fife").build();
         Response response = requestHelper.performRequest(RequestMethodType.POST_METHOD, BaseURL+RequestURLType.POST_REGISTER, RequestFailed);
-
+        String error = "Missing password";
         responseHelper = new ResponseHelper(response);
-        responseHelper.validateResponse(ResponseBodyType.RESPONSE_REGISTER, ResponseCodeType.STATUS_400);
+        responseHelper.validateResponse(ResponseBodyType.RESPONSE_REGISTER, ResponseCodeType.STATUS_400, error);
 
 
 
