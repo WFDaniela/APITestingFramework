@@ -18,9 +18,9 @@ public class ResponseUsersSuccess implements ResponseValidator {
     @JsonProperty("total_pages")
     private Integer totalPages;
     @JsonProperty("data")
-    private List<ResourceData> data;
+    private List<UsersData> data;
     @JsonProperty("support")
-    private ResourceSupport support;
+    private UsersSupport support;
 
     @Override
     public void ValidateResponse() {

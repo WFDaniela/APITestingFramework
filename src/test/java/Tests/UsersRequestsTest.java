@@ -2,6 +2,7 @@ package Tests;
 
 import RequestObject.RequestMethodType;
 import RequestObject.RequestURLType;
+import ResponseObject.ResponseBodyType;
 import ResponseObject.ResponseHelper;
 import ResponseObject.ResponseCodeType;
 import ShareData.BaseTest;
@@ -15,7 +16,7 @@ public class UsersRequestsTest extends BaseTest {
 
         Response response = requestHelper.performRequest(RequestMethodType.GET_METHOD, BaseURL + RequestURLType.GET_LIST_USERS, null);
         responseHelper = new ResponseHelper(response);
-        responseHelper.validateResponseCode(ResponseCodeType.STATUS_200);
+        responseHelper.validateResponse(ResponseBodyType.RESPONSE_USERS, ResponseCodeType.STATUS_200);
     }
 
         @Test(priority = 2)
@@ -31,15 +32,15 @@ public class UsersRequestsTest extends BaseTest {
 
             Response response = requestHelper.performRequest(RequestMethodType.GET_METHOD, BaseURL + RequestURLType.GET_SINGLE_USER_NOT_FOUND, null);
             responseHelper = new ResponseHelper(response);
-            responseHelper.validateResponseCode(ResponseCodeType.STATUS_404);
+            responseHelper.validateResponse(ResponseBodyType.RESPONSE_USER, ResponseCodeType.STATUS_404);
 
         }
         @Test(priority = 4)
         public void getDelayedResponse() {
 
-            Response response = requestHelper.performRequest(RequestMethodType.GET_METHOD, BaseURL + RequestURLType.GET_DELAYED_RESPONSE, null);
+            Response response = requestHelper.performRequest(RequestMethodType.GET_METHOD, BaseURL + RequestURLType.GET_LIST_USERS, null);
             responseHelper = new ResponseHelper(response);
-            responseHelper.validateResponseCode(ResponseCodeType.STATUS_200);
+            responseHelper.validateResponse(ResponseBodyType.RESPONSE_USERS, ResponseCodeType.STATUS_200);
 
         }
 
