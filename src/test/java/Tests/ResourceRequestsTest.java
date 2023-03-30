@@ -20,6 +20,7 @@ public class ResourceRequestsTest extends BaseTest {
 
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponseCode(ResponseCodeType.STATUS_200);
+
     }
 
     @Test(priority = 2)
