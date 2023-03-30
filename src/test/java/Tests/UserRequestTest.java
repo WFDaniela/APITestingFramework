@@ -19,6 +19,7 @@ public class UserRequestTest extends BaseTest {
 
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponse(ResponseBodyType.RESPONSE_USER, ResponseCodeType.STATUS_201, null);
+        responseHelper.printResponseBody();
 
     }
 
@@ -28,6 +29,7 @@ public class UserRequestTest extends BaseTest {
         Response response = requestHelper.performRequest(RequestMethodType.PUT_METHOD, BaseURL + RequestURLType.PUT_PATCH_DELETE_USER, requestUser);
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponse(ResponseBodyType.RESPONSE_USER, ResponseCodeType.STATUS_200, null);
+        responseHelper.printResponseBody();
 
     }
     @Test(priority = 3)
@@ -36,6 +38,7 @@ public class UserRequestTest extends BaseTest {
         Response response = requestHelper.performRequest(RequestMethodType.PATCH_METHOD, BaseURL + RequestURLType.PUT_PATCH_DELETE_USER, requestUser);
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponse(ResponseBodyType.RESPONSE_USER, ResponseCodeType.STATUS_200, null);
+        responseHelper.printResponseBody();
 
     }
     @Test(priority = 4)
@@ -43,6 +46,7 @@ public class UserRequestTest extends BaseTest {
         Response response = requestHelper.performRequest(RequestMethodType.DELETE_METHOD, BaseURL + RequestURLType.PUT_PATCH_DELETE_USER, null);
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponse(ResponseBodyType.RESPONSE_USER, ResponseCodeType.STATUS_204, null);
+        responseHelper.printResponseBody();
 
     }
 

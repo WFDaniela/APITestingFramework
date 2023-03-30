@@ -20,6 +20,7 @@ public class ResourceRequestsTest extends BaseTest {
 
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponseCode(ResponseCodeType.STATUS_200);
+        responseHelper.printResponseBody();
 
     }
 
@@ -30,6 +31,7 @@ public class ResourceRequestsTest extends BaseTest {
 
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponseCode(ResponseCodeType.STATUS_200);
+        responseHelper.printResponseBody();
 
     }
 
@@ -40,6 +42,7 @@ public class ResourceRequestsTest extends BaseTest {
 
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponseCode(ResponseCodeType.STATUS_404);
+        responseHelper.printResponseBody();
 
     }
 }

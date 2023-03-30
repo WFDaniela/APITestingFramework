@@ -21,6 +21,7 @@ public class LoginRequestTest extends BaseTest {
         responseHelper = new ResponseHelper(response);
 
         responseHelper.validateResponse(ResponseBodyType.RESPONSE_LOGIN, ResponseCodeType.STATUS_200);
+        responseHelper.printResponseBody();
 
     }
 
@@ -32,6 +33,7 @@ public class LoginRequestTest extends BaseTest {
 
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponse(ResponseBodyType.RESPONSE_LOGIN, ResponseCodeType.STATUS_400, error);
+        responseHelper.printResponseBody();
     }
 
 

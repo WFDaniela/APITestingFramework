@@ -17,6 +17,7 @@ public class UsersRequestsTest extends BaseTest {
         Response response = requestHelper.performRequest(RequestMethodType.GET_METHOD, BaseURL + RequestURLType.GET_LIST_USERS, null);
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponse(ResponseBodyType.RESPONSE_USERS, ResponseCodeType.STATUS_200, null);
+        responseHelper.printResponseBody();
     }
 
         @Test(priority = 2)
@@ -34,6 +35,7 @@ public class UsersRequestsTest extends BaseTest {
             Response response = requestHelper.performRequest(RequestMethodType.GET_METHOD, BaseURL + RequestURLType.GET_SINGLE_USER_NOT_FOUND, null);
             responseHelper = new ResponseHelper(response);
             responseHelper.validateResponse(ResponseBodyType.RESPONSE_USER, ResponseCodeType.STATUS_404, null);
+            responseHelper.printResponseBody();
 
         }
         @Test(priority = 4)
@@ -42,6 +44,7 @@ public class UsersRequestsTest extends BaseTest {
             Response response = requestHelper.performRequest(RequestMethodType.GET_METHOD, BaseURL + RequestURLType.GET_LIST_USERS, null);
             responseHelper = new ResponseHelper(response);
             responseHelper.validateResponse(ResponseBodyType.RESPONSE_USERS, ResponseCodeType.STATUS_200,null );
+            responseHelper.printResponseBody();
 
         }
 

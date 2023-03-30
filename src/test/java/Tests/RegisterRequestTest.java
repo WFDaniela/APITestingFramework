@@ -21,6 +21,7 @@ public class RegisterRequestTest extends BaseTest {
 
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponse(ResponseBodyType.RESPONSE_REGISTER, ResponseCodeType.STATUS_200, null);
+        responseHelper.printResponseBody();
 
     }
 
@@ -32,6 +33,7 @@ public class RegisterRequestTest extends BaseTest {
         String error = "Missing password";
         responseHelper = new ResponseHelper(response);
         responseHelper.validateResponse(ResponseBodyType.RESPONSE_REGISTER, ResponseCodeType.STATUS_400, error);
+        responseHelper.printResponseBody();
 
 
 
